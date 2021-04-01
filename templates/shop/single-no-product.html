@@ -1,0 +1,500 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+{% block content %}
+
+    <div class="col-12">
+        <div class="product-page">
+            <article class="js-product">
+                <div class="col-lg-4 col-md-12 col-xs-12 pull-right">
+                    <div class="product-gallery">
+                        <img class="zoom-img" id="img-product-zoom"
+                             src="{% static 'shop/images/product-slider-2/114393183.jpg' %}"
+                             data-zoom-image="assets/images/product-slider-2/114393183.jpg'%}" width="411"/>
+                        <div id="gallery_01f" style="width:420px;float:right;">
+                            <ul class="gallery-items owl-carousel owl-theme" id="gallery-slider">
+                                <li class="item">
+                                    <a href="#" class="elevatezoom-gallery active" data-update=""
+                                       data-image="assets/images/product-slider-2/114393183.jpg'%}"
+                                       data-zoom-image="assets/images/product-slider-2/114393183.jpg'%}">
+                                        <img src="{% static 'shop/images/product-slider-2/111460798.jpg' %}"
+                                             width="100"/></a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" class="elevatezoom-gallery active" data-update=""
+                                       data-image="assets/images/product-slider-2/113345411(1).jpg'%}"
+                                       data-zoom-image="assets/images/product-slider-2/113345411(1).jpg'%}">
+                                        <img src="{% static 'shop/images/product-slider-2/113345411.jpg' %}"
+                                             width="100"/></a>
+                                </li>
+                                <li class="item">
+                                    <a href="tester" class="elevatezoom-gallery"
+                                       data-image="assets/images/product-slider-2/113345412(1).jpg'%}"
+                                       data-zoom-image="assets/images/product-slider-2/113345412(1).jpg'%}">
+                                        <img src="{% static 'shop/images/product-slider-2/113345412.jpg' %}"
+                                             width="100"/>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#" class="elevatezoom-gallery"
+                                       data-image="assets/images/product-slider-2/111460791(1).jpg'%}"
+                                       data-zoom-image="assets/images/product-slider-2/111460791(1).jpg'%}">
+                                        <img src="{% static 'shop/images/product-slider-2/111460791.jpg' %}"
+                                             width="100"/></a>
+                                </li>
+                                <li class="item">
+                                    <a href="tester" class="elevatezoom-gallery"
+                                       data-image="assets/images/product-slider-2/111460801(1).jpg'%}"
+                                       data-zoom-image="assets/images/product-slider-2/111460801(1).jpg'%}">
+                                        <img src="{% static 'shop/images/product-slider-2/111460800.jpg' %}"
+                                             width="100"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="gallery-item">
+                            <ul class="gallery-options">
+                                <li class="option-wishes">
+                                    <button class="btn-option btn-option-wishes">
+                                        <i class="fa fa-heart"></i>
+                                        <span class="tooltip-short">افزودن به علاقه‌مندی</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal -->
+                <div class="col-lg-8 col-md-12 col-xs-12 pull-left">
+                    <section class="product-info">
+                        <div class="product-headline">
+                            <h1 class="product-title">گوشی موبایل سامسونگ مدل Galaxy A50 SM-A505F/DS
+                                دو سیم کارت ظرفیت 128گیگابایت
+                                <span class="product-title-en">Samsung Galaxy A50 SM-A505F/DS Dual SIM 128GB Mobile Phone</span>
+                            </h1>
+                        </div>
+                        <div class="product-attributes">
+                            <div class="col-lg-7 col-md-7 col-xs-12 pull-right" style="padding:0">
+                                <div class="product-config">
+                                    <div class="product-config-wrapper">
+                                        <div class="product-variants">
+                                            <span>انتخاب رنگ: </span>
+                                            <ul>
+                                                <li class="js-c-ui-variant">
+                                                    <label for="#" class="ui-variant-color">
+                                                        <span class="ui-variant-shape"
+                                                              style="background-color: #2196f3"></span>
+                                                        <input type="radio" value="4" name="color" id="variant"
+                                                               class="js-variant-selector" checked="">
+                                                        <span class="ui-variant-check">آبی</span>
+                                                    </label>
+                                                </li>
+                                                <li class="js-c-ui-variant">
+                                                    <label for="#" class="ui-variant-color">
+                                                        <span class="ui-variant-shape"
+                                                              style="background-color: #fff"></span>
+                                                        <input type="radio" value="4" name="color" id="variant"
+                                                               class="js-variant-selector">
+                                                        <span class="ui-variant-check">سفید</span>
+                                                    </label>
+                                                </li>
+                                                <li class="js-c-ui-variant">
+                                                    <label for="#" class="ui-variant-color">
+                                                        <span class="ui-variant-shape"
+                                                              style="background-color: #212121"></span>
+                                                        <input type="radio" value="4" name="color" id="variant"
+                                                               class="js-variant-selector">
+                                                        <span class="ui-variant-check">مشکی</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="product-params">
+                                            <div class="product-additional-info">
+                                                <div class="product-additional-item">
+                                                    <p>هشدار سامانه همتا: حتما در زمان تحویل دستگاه، به کمک کد فعال‌سازی
+                                                        چاپ شده روی جعبه یا کارت گارانتی، دستگاه را از طریق #7777*، برای
+                                                        سیم‌کارت خود فعال‌سازی کنید. آموزش تصویری در آدرس اینترنتی
+                                                        hmti.ir/05</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-xs-12 pull-left" style="padding:0">
+                                <div class="product-seller-info">
+                                    <div class="product-stock-status">
+                                        <div class="product-stock-title">
+                                            <span>ناموجود</span>
+                                        </div>
+                                        <div class="product-stock-body">
+                                            متاسفانه این کالا در حال حاضر موجود نیست. می‌توانید از طریق لیست بالای صفحه،
+                                            از محصولات مشابه این کالا دیدن نمایید
+                                        </div>
+                                        <button class="product-stock-action btn btn-secondary" type="submit">موجود شد به
+                                            من اطلاع بده
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <div class="p-tabs">
+                <div class="box-tabs-main">
+                    <ul class="box-tabs">
+                        <li class="box-tabs-tab active-tabs">
+                            <a href="#"><span class="fa fa-file-text-o"></span>توضیحات</a>
+                        </li>
+                        <li class="box-tabs-tab">
+                            <a href="#"><span class="fa fa-file-text-o"></span>مشخصات</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-active-content">
+                        <div class="tab content-expert" style="display:block;">
+                            <article>
+                                <h2 class="params-headline">
+                                    نقد و بررسی اجمالی
+                                    <span>Samsung Galaxy A50 SM-A505F/DS Dual SIM 128GB Mobile Phone</span>
+                                </h2>
+                                <section class="content-expert-summary">
+                                    <div class="is-masked">
+                                        <div class="mask-text-product-summary">
+                                            <p>سامسونگ سال 2019 را با متنوع کردن هرچند بیشتر سری گوشی‌های A خود آغاز
+                                                کرد. این سری از تولیدات سامسونگ به داشتن صفحه‌نمایش بسیار با کیفیت
+                                                AMOLED و دوربین‌هایی با امکانات بالا شهرت دارند. در این میان به نظر
+                                                می‌رسد گوشی «Galaxy A50» حرف‌های زیادی در هر دوی این زمینه‌ها داشته
+                                                باشد. گوشی موبایل Galaxy A50 با صفحه‌نمایش سوپر آمولد طراحی &nbsp;شده
+                                                است و ظاهر زیبایی دارد. سامسونگ تلاش کرده است حاشیه را در این تولید جدید
+                                                خود تا حد امکان کم کند. این گوشی قاب پشتی از جنس پلاستیک دارد و قاب
+                                                جلویی آن را شیشه پوشانده که البته جلوه‌ی زیبایی به گوشی داده است. این
+                                                محصول سامسونگ با جدیدترین نسخه از سیستم‌عامل اندروید (Pie) روانه بازار
+                                                شده است تا از هر نظر گوشی مدرن به‌حساب بیاید. صفحه‌نمایش استفاده‌شده در
+                                                این گوشی 6.4&nbsp;اینچ با رزولوشن FullHD+ &nbsp;است که با استفاده از
+                                                فناوری Super AMOLED و پنل OLED تصاویر
+                                                شفاف و بی‌نظیری را به نمایش می‌گذارد. این صفحه‌نمایش در هر اینچ 403
+                                                پیکسل را نشان می‌دهد که این یعنی جزئیات و وضوح تصویر عالی است. همچنین
+                                                روکش این نمایشگر لایه‌ی محافظ Corning Gorilla Glass است که از خط‌وخش و
+                                                ضربه جلوگیری می‌کند. تراشه‌ی این محصول، Exynos 9610 &nbsp;از تراشه‌های
+                                                10 نانومتری سامسونگ است که به همراه&nbsp; 4 گیگابایت رم عرضه می‌شود. این
+                                                تراشه یکی از قوی‌ترین تراشه‌های موجود در حال حاضر است و برای انجام
+                                                بازی‌های سنگین و بازکردن چندین برنامه به صورت هم‌زمان و تماشای ویدئو
+                                                کاملا مناسب است و کم نمی‌آورد. تراشه‌ی گرافیکی Mali-G72 MP3 هم برای پخش
+                                                ویدئو و بازی مناسب است. این گوشی در دو ظرفیت 64 و 128 گیگابایتی عرضه شده
+                                                است و با استفاده از یک کارت حافظه‌ی جانبی قادر خواهید بود حافظه داخلی را
+                                                تا یک ترابایت دیگر هم افزایش دهید. دوربین اصلی &nbsp;A50 سنسور
+                                                25مگاپیکسلی دارد و از نوع عریض (Wide) است. دو سنسور 8 &nbsp;و 5
+                                                مگاپیکسلی دیگر هم در کنار این دوربین اصلی مجموعه دوربین‌های قاب پشتی A50
+                                                را تشکیل داده‌اند. دوربین سلفی 25مگاپیکسلی هم در قاب جلویی این گوشی به
+                                                کار گرفته شده است. باتری 4000 میلی‌آمپرساعتی، پشتیبانی از فناوری شارژ
+                                                سریع 15 واتی، درگاه USB Type-C و حسگر اثرانگشت در زیر قاب اصلی هم از
+                                                دیگر ویژگی‌های این تازه‌وارد است. سامسونگ در ساخت این گوشی از جدیدترین
+                                                فناوری‌های ساخت گوشی استفاده کرده است تا میان‌رده‌ای با قابلیت‌های نزدیک
+                                                به یک بالارده خوش‌ساخت را روانه بازار کند.</p>
+                                        </div>
+                                        <a href="#" class="mask-handler">
+                                            <span class="show-more">ادامه مطلب</span>
+                                            <span class="show-less">بستن</span>
+                                        </a>
+                                        <div class="shadow-box"></div>
+                                    </div>
+                                </section>
+                            </article>
+                        </div>
+
+                        <div class="tab params" style="display:none;">
+                            <article>
+                                <h2 class="params-headline">
+                                    مشخصات فنی
+                                    <span>Samsung Galaxy A50 SM-A505F/DS Dual SIM 128GB Mobile Phone</span>
+                                </h2>
+                                <section>
+                                    <h3 class="params-title">مشخصات کلی</h3>
+                                    <ul class="params-list">
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">ابعاد</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">7.7 × 74.7 × 158.5 میلی‌متر</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">توضیحات سیم کارت</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">سایز نانو (8.8 × 12.3 میلی‌متر)</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">وزن</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">166 گرم</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">ساختار بدنه</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">قاب جلو شیشه</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block" style="background:#fff;"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">قاب پشت پلاستیک</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">ویژگی‌های خاص</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">مناسب عکاسی , فبلت , مجهز به حس‌گر اثرانگشت , مناسب عکاسی سلفی </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">تعداد سیم کارت</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">دو سیم کارت </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                    </ul>
+                                </section>
+                                <section>
+                                    <h3 class="params-title">پردازنده</h3>
+                                    <ul class="params-list">
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">تراشه</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">Exynos 9610 (10nm) CPU</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                <span class="js-dk-wiki-trigger">
+                                                    <a href="#" class="link-border">پردازنده‌ی مرکزی</a>
+                                                    <div class="wiki-container">
+                                                        <p class="c-wiki__text">
+                                                            سی‌پی‌یو (به انگلیسی Central Processing Unit یا CPU) یا پردازنده (به انگلیسی Processor)، یکی از اجزاء رایانه می‌باشد که فرامین و اطلاعات را مورد پردازش قرار می‌دهد. واحدهای پردازش مرکزی ویژگی پایه‌ای قابل برنامه‌ریزی شدن را در رایانه‌های رقمی فراهم می‌کنند، و یکی از مهم‌ترین اجزا رایانه‌ها هستند. یک پردازنده مرکزی، مداری یکپارچه می‌باشد که معمولا به عنوان ریزپردازنده شناخته می‌شود. امروزه عبارت CPU معمولا برای ریزپردازنده‌ها به کار می‌رود. مدت زمان انجام یک کار به وسیله رایانه، به عوامل متعددی بستگی دارد که اولین آن‌ها، سرعت پردازشگر رایانه است. پردازشگر یک تراشه الکترونیکی کوچک در قلب کامپیوتر است و سرعت آن بر حسب مگاهرتز یا گیگاهرتز سنجیده می‌شود. هر چه مقدار این پارامتر بیشتر باشد، پردازشگر سریع‌تر خواهد بود و در نتیجه قادر خواهد بود، محاسبات بیشتری را در هر ثانیه انجام دهد. در اصطلاح عامیانه CPU به عنوان مغز رایانه شناخته می‌شود.
+                                                        </p>
+                                                    </div>
+                                                </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">7.7 × 74.7 × 158.5 میلی‌متر</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">نوع پردازنده</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">64 بیت </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">فرکانس پردازنده‌ی مرکزی</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">2.3 و 1.7 گیگاهرتز</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                <span class="js-dk-wiki-trigger">
+                                                    <a href="#" class="link-border">پردازنده‌ی گرافیکی</a>
+                                                    <div class="wiki-container">
+                                                        <p class="c-wiki__text">
+                                                            پردازشگر گرافیکی (به انگلیسی Graphics Processing Unit)‏ که با نام GPU نیز شناخته می‌شود، یک مدار الکتریکی پیشرفته است که تصاویر خروجی را برای نمایشگر تولید می‌کند. اکثر پردازشگرهای گرافیکی، توابع مختلفی مانند شتاب دهنده‌ی رندر صحنه‌های سه‌بعدی و دوبعدی، رمز گشایی کردن MPEG-2/MPEG-4، خروجی تلویزیون و حتی قابلیت اتصال چند مانیتور را ارائه می‌کنند.
+                                                        </p>
+                                                    </div>
+                                                </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">Mali-G72 MP3 GPU</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+
+                                    </ul>
+                                </section>
+                                <section>
+                                    <h3 class="params-title">حافظه</h3>
+                                    <ul class="params-list">
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">حافظه داخلی</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">128 گیگابایت </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">مقدار RAM</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">4 گیگابایت</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">پشتیبانی از کارت حافظه جانبی</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">microSD</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+                                            <div class="col-lg-3 col-md-3 col-xs-12 pull-right" style="padding:0;">
+                                                <div class="params-list-key">
+                                                    <span class="block">حداکثر ظرفیت کارت حافظه</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-9 col-md-9 col-xs-12 pull-left" style="padding:0;">
+                                                <div class="params-list-value">
+                                                    <span class="block">1 ترابایت</span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                    </ul>
+                                </section>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

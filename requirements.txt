@@ -1,0 +1,5 @@
+django
+pillow
+kavenegar
+zeep
+django-material-admin

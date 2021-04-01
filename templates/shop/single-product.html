@@ -1,0 +1,164 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+{% block content %}
+
+    <div class="col-12">
+        <div class="product-page">
+            <article class="js-product">
+                <div class="col-lg-4 col-md-12 col-xs-12 pull-right">
+                    <div class="product-gallery">
+                        <img class="zoom-img" id="img-product-zoom"
+                             src="{{ product.image.url }}"
+                             data-zoom-image="assets/images/product-slider-2/114393183.jpg'%}" width="411"/>
+                        <div id="gallery_01f" style="width:420px;float:right;">
+                            <ul class="gallery-items owl-carousel owl-theme" id="gallery-slider">
+                                {% for item in image %}
+                                    <li class="item">
+                                        <a href="#" class="elevatezoom-gallery active"
+                                           data-update=""
+                                           data-image="{{ item.images.url }}"
+                                           data-zoom-image="{{ item.images.url }}">
+                                            <img src="{{ item.images.url }}"
+                                                 width="100"/></a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal -->
+                <div class="col-lg-8 col-md-12 col-xs-12 pull-left">
+                    <section class="product-info">
+                        <div class="product-headline">
+                            <h1 class="product-title">{{ product.name }}
+                                <span class="product-title-en">{{ product.name }}</span>
+                            </h1>
+                        </div>
+                        <div class="product-attributes">
+                            <div class="col-lg-7 col-md-7 col-xs-12 pull-right" style="padding:0">
+                                <div class="product-config">
+                                    <div class="product-config-wrapper">
+                                        <div class="product-params">
+                                            <div class="product-additional-item">
+                                                <p>{{ product.description }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xs-12 pull-left" style="padding:0">
+                                <div class="product-seller-info">
+                                    <div class="js-seller-info-changable">
+                                        <div class="product-seller-row">
+                                            <div class="product-seller-first-line">فروشنده: {{ product.seller }}</div>
+                                        </div>
+                                        <div class="product-seller-row js-seller-info-shipment">
+                                            <div class="product-delivery-warehouse">آماده ارسال</div>
+                                        </div>
+
+                                        <div class="product-seller-row">
+                                            <p>قیمت :</p>
+                                            <div class="product-seller-row-price">
+                                                <div class="product-seller-price-prev">{{ product.price }}</div>
+                                                تومان
+                                            </div>
+
+                                            {% if not request.COOKIES.id %}
+
+                                                <div class="product-stock-body" align="center">
+                                                    برای ثبت سفارش
+                                                </div>
+                                                <a href="{% url 'login' %}"><button class="product-stock-action btn btn-secondary" type="submit">
+                                                    وارد شوید یا
+                                                </button></a>
+                                                <a href="{% url 'register' %}"><button class="product-stock-action btn btn-secondary" type="submit">
+                                                    ثبت نام کنید
+                                                </button></a>
+                                            {% else %}
+                                                {% if Iscart %}
+                                                    <a href="{% url 'edit_cart' product.seller.id product.id 'delete' %}"
+                                                       class="btn-add-to-cart"><span
+                                                            class="btn-add-to-cart-txt">حذف از سبد خرید</span></a>
+                                                {% else %}
+                                                    <a href="{% url 'edit_cart' product.seller.id product.id 'add' %}"
+                                                       class="btn-add-to-cart"><span
+                                                            class="btn-add-to-cart-txt">افزودن به سبد خرید</span></a>
+                                                {% endif %}
+
+                                                {% if Isfave %}
+                                                    <a href="{% url 'edit_favorite' product.id 'delete'  %}"><span
+                                                            class="btn-add-to-cart-txt">حذف از علاقه مندی ها</span></a>
+
+                                                {% else %}
+                                                    <a href="{% url 'edit_favorite' product.id 'add' %}"><span
+                                                            class="btn-add-to-cart-txt">افزودن به علاقه مندی ها</span></a>
+
+                                                {% endif %}
+
+
+                                            {% endif %}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <div class="p-tabs">
+                <div class="box-tabs-main">
+                    <ul class="box-tabs">
+                        <li class="box-tabs-tab active-tabs">
+                            <a href="#"><span class="fa fa-file-text-o"></span>مشخصات</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-active-content">
+
+                        <div class="tabs-content">
+                            <div class="tab-active-content">
+                                <div class="tab content-expert" style="display:block;">
+                                    <article>
+                                        <h2 class="params-headline">
+                                            مشخصات فنی
+                                        </h2>
+                                        <section>
+                                            <ul class="params-list">
+                                                {% for descriptions in description %}
+                                                    <li>
+                                                        <div class="col-lg-3 col-md-3 col-xs-12 pull-right"
+                                                             style="padding:0;">
+                                                            <div class="params-list-key">
+                                                                <span class="block">{{ descriptions.name }}</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-9 col-md-9 col-xs-12 pull-left"
+                                                             style="padding:0;">
+                                                            <div class="params-list-value">
+                                                                <span class="block">{{ descriptions.value }}</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </section>
+                                    </article>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

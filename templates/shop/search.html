@@ -1,0 +1,106 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+{% block content %}
+
+    {% if product %}
+        <div class="row">
+            <div class="col-12">
+                <div class="widget widget-product card">
+                    <header class="card-header">
+                        <span class="title-one">محصولات یافت شده</span>
+                        <h3 class="card-title"></h3>
+                    </header>
+                    <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage"
+                                 style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
+                                {% for item in product %}
+                                    <div class="owl-item" style="width: 309.083px; margin-left: 10px;">
+                                        <div class="item">
+                                            <a href="/singel_product/{{ item.slug }}">
+                                                <img src="{{ item.image.url }}"
+                                                     class="img-fluid" alt="">
+                                            </a>
+                                            <h2 class="post-title">
+                                                <a href="#">
+                                                    {{ item.title_fa }}                                            </a>
+                                            </h2>
+                                            <div class="price">
+                                                {#                                            <del><span>۴,۵۳۰,۰۰۰<span>تومان</span></span></del>#}
+                                                <ins><span>{{ item.price }}<span>تومان</span></span></ins>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="owl-nav">
+                            <button type="button" role="presentation" class="owl-prev disabled"><i
+                                    class="fa fa-angle-right"></i></button>
+                            <button type="button" role="presentation" class="owl-next"><i class="fa fa-angle-left"></i>
+                            </button>
+                        </div>
+                        <div class="owl-dots disabled"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elif category %}
+        <div class="col-lg-12">
+        <div class="promotion-categories-container mt-4 mb-4">
+            <span class="promotion-categories-title">دسته بندی ها</span>
+            <div class="category-container">
+                <div class="promotion-categories">
+                    {% for item in category %}
+                        <a href="{% url 'product_filter' 'category' item.id  %}" class="promotion-category">
+                            <img src="{{ item.image.url }}">
+                            <div class="promotion-category-name">{{ item.name }}</div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% elif brand %}
+        <div class="row">
+            <div class="col-12">
+                <div class="widget widget-product card">
+                    <header class="card-header">
+                        <span class="title-one">برند های یافت شده</span>
+                        <h3 class="card-title"></h3>
+                    </header>
+                    <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                             style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
+                            {% for item in brand %}
+                                <div class="owl-item" style="width: 309.083px; margin-left: 10px;">
+                                    <div class="item">
+                                        <a href="{% url 'product_filter' 'brand' item.id  %}">
+                                            <img src="{{ item.image.url }}" class="img-fluid"
+                                                 alt="" style="width:100px !important; height:100px !important;">
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="owl-nav">
+                        <button type="button" role="presentation" class="owl-prev disabled"><i
+                                class="fa fa-angle-right"></i></button>
+                        <button type="button" role="presentation" class="owl-next"><i class="fa fa-angle-left"></i>
+                        </button>
+                    </div>
+                    <div class="owl-dots disabled"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <h1>محصولی یافت نشد</h1>
+    {% endif %}
+
+
+
+{% endblock %}

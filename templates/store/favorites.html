@@ -1,0 +1,33 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+
+{% block content %}
+    {% include "store/sidebar.html" %}
+    <div class="col-lg-9 col-md-8 col-xs-12 pull-right">
+        <div class="headline-profile">
+            <span>لیست علاقه مندی</span>
+        </div>
+        {% for item in favorite %}
+            <div class="profile-stats">
+                <div class="profile-recent-fav profile-favorites-fav">
+                    <a href="#" class="img-profile-favorites"><img src="{{ item.image.url }}" style="margin: 10px"></a>
+                    <p class="profile-recent-fav-col">
+                        <a href="#" style="font-size:16px;">{{ item.title_fa }}</a>
+                    <p>{{ item.price }} تومان</p>
+                    <a href="{% url 'singel_product' item.slug %}" class="profile-wishlist">مشاهده محصول<i
+                            class="fa fa-angle-left"></i></a>
+                    <div class="profile-recent-fav-remove">
+                        <a href="{{% url 'edit_favorite' item.id "delete" %}">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
+
+{% load static %}

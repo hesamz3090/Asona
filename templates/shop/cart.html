@@ -1,0 +1,174 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+function send(cart_id){
+    number = document.getElementById('number');
+    url = "http://127.0.0.1:8000/cart/?number=" + number.value + "&cart_id=" + cart_id
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", url, true);
+    xmlHttp.send(null);
+    location.reload();
+}
+
+function pay(){
+price = "{{ total_price }}";
+
+const online = document.getElementById('online');
+const offline = document.getElementById('offline');
+
+
+
+
+if (online.checked == true){
+type = "online";
+}
+
+else if (offline.checked == true){
+type = "offline";
+}
+
+
+url = "http://127.0.0.1:8000/payment?price=" + price + "&type=" + type;
+window.location.href = url ;
+
+}
+
+</script>
+<div class="col-12" onload="onload()">
+    <div class="cart-tab-main">
+        <div class="col-lg-8 col-md-8 col-xs-12 pull-right">
+            <div class="page-content-cart">
+                <form action="#">
+                    {% for item in cart %}
+                    <div class="checkout-body">
+                        <a href="{% url 'singel_product' item.id %}" class="col-thumb"><img
+                                src="{{ item.product.image.url }}"></a>
+                        <div class="checkout-col-desc">
+                            <a href="{% url 'singel_product' item.id %}"><h3>{{ item.product.name }}</h3></a>
+                            <div class="checkout-variant-color">
+                                <span class="checkout-variant-title">{{ item.product.price }} تومان</span>
+                            </div>
+                            <div class="quantity">
+                                <input id="number" type="number" min="{{ item.product.min }}"
+                                       max="{{ item.product.max }}" step="1"
+                                       value="{{ item.number }}" onchange="send('{{ item.id }}')">
+                            </div>
+                        </div>
+                        <a href="{% url 'edit_cart' item.seller.id item.id 'delete' %}" class="remove-from-cart"><i
+                                class="fa fa-close"></i></a>
+                    </div>
+                    {% endfor %}
+
+
+                </form>
+            </div>
+
+            <div class="checkout-to-shipping-sticky">
+                <a class="selenium-next-step-shipping" onclick="pay()">تایید و پرداخت</a>
+                <div class="checkout-to-shipping-price-report">
+                    <p>مبلغ قابل پرداخت</p>
+                    <div class="cart-item-product-price">
+                        {{ total_price }}
+                        <span>
+                                        تومان
+                                    </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-actions">
+                <a href="{% url 'shop' %}" class="btn-link-spoiler">
+                    « بازگشت به صفحه اصلی
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-12 pull-left">
+            <div class="checkout-price-options">
+                    <section class="checkout-price-options-container">
+                        <div class="checkout-price-options-header">
+                            <span>استفاده از کارت هدیه دیجی‌استور</span>
+                        </div>
+                        <div class="checkout-price-options-content">
+                            <p>با ثبت کد کارت هدیه، مبلغ کارت هدیه از “مبلغ قابل پرداخت” کسر می‌شود.</p>
+                        </div>
+                        <div class="checkout-price-options-row">
+                            <div class="checkout-price-options-form-field">
+                                <input type="text" name="gift-card-serial" class="input-field"
+                                       placeholder="مثلا 1234ABCD5678EFGH0123">
+                            </div>
+                            <button class="checkout-price-options-form-button"><a href="#" class="gift">ثبت کد هدیه</a>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            <div class="payment">
+                    <ul class="checkout-paymethod">
+                        <li class="wallet-container">
+                            <div class="checkout-paymethod-item">
+                                <span class="mdi mdi-card-text-outline"></span>
+                                <label class="radio-primary">
+                                    <input type="radio" id="offline" name="payment-radio">
+                                    <span class="ui-radio-check"></span>
+                                </label>
+                                <h4 class="checkout-paymethod-title">
+                                    <p class="checkout-paymethod-title-label">پرداخت پرداخت درب محل</p>
+                                </h4>
+                                <div class="wallet-extra-info">پرداخت در محل دریافت
+                                </div>
+                            </div>
+                        </li>
+                        <li class="wallet-container">
+                            <div class="checkout-paymethod-item">
+                                <span class="mdi mdi-card-text-outline"></span>
+                                <label class="radio-primary" style="display:block">
+                                    <input type="radio" id="online" name="payment-radio" checked="checked">
+                                    <span class="ui-radio-check"></span>
+                                </label>
+                                <h4 class="checkout-paymethod-title">
+                                    <p class="checkout-paymethod-title-label">پرداخت اینترنتی هوشمند</p>
+                                    <span class="paymethod-wallet-amount">آنلاین با تمامی کارت‌های بانکی</span>
+                                </h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            <div class="page-aside">
+                <div class="checkout-summary">
+                    <ul class="checkout-summary-summary">
+                        <li>
+                            <span>مبلغ کل ({{ count }} کالا)</span>
+                            <span>{{ total_price }} تومان</span>
+                        </li>
+                        <li>
+                            <span>جمع</span>
+                            <span>{{ total_price }} تومان</span>
+                        </li>
+                        <li>
+                            <span style="color: #424750; font-size:14px;">هزینه ارسال</span>
+                            <span></span>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-truck"></i>ارسال عادی</span>
+                            <span>رایگان</span>
+                        </li>
+                        <li>
+                            <span>مبلغ قابل پرداخت</span>
+                            <span>{{ total_price }} تومان</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="checkout-summary-content">
+                    <p>کالاهای موجود در سبد شما ثبت و رزرو نشده‌اند، برای ثبت سفارش مراحل بعدی را تکمیل کنید.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block title %}تایید کد{% endblock %}
+{% block content %}
+
+    <div id="main">
+        <div class="col-lg-4 col-md-6 col-xs-12 mx-auto">
+            <div class="account-box">
+
+                <span class="account-head-line">تایید کد</span>
+                <form method="post" action="{% url 'code' %}">
+                    {% csrf_token %}
+                    <div class="content-account">
+
+                        <label for="password">کد تایید</label>
+                        <input type="text" id="password" class="input-password" name="code">
+
+                        <div class="parent-btn">
+                            <button class="dk-btn dk-btn-info">
+                                ورود به آسونا
+                                <i class="fa fa-sign-in sign-in"></i>
+                            </button>
+                        </div>
+
+                        <div class="account-footer">
+                            <span>شماره تماس اشتباه است ؟</span>
+                            <a href="{% url 'login' %}" class="btn-link-register">تغییر شماره تماس</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

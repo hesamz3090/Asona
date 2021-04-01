@@ -1,0 +1,91 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+
+{% block content %}
+    {% include "store//sidebar.html" %}
+    <div class="col-lg-9 col-md-8 col-xs-12 pull-right">
+        <div class="col-lg-12 col-xs-12 pull-right">
+            <div class="profile-navbar">
+                <div class="profile-navbar-back-alignment">
+                    <h4 class="edit-personal">ویرایش اطلاعات شخصی
+
+                    </h4>
+                </div>
+            </div>
+            <form action="{% url 'edit' %}" method="POST">
+                {% csrf_token %}
+                <div class="profile-stats">
+                    <div class="form-legal-row">
+                        <div class="col-lg-6 col-xs-12 mx-auto">
+                            <div class="form-legal-col">
+                                <fieldset class="form-legal-fieldset">
+
+                                    <div class="form-legal-item">
+                                        <label for="name-last">نام</label>
+                                        <input type="text" name="first_name" id="first_name" class="input-name-last"
+                                               value="{{ profile.first_name }}">
+                                    </div>
+
+                                    <div class="form-legal-item">
+                                        <label for="name-last">نام خانوادگی</label>
+                                        <input type="text" name="last_name" id="last_name" class="input-name-last"
+                                               value="{{ profile.last_name }}">
+                                    </div>
+
+                                    <div class="form-legal-item">
+                                        <label for="name-last">نام فروشگاه</label>
+                                        <input type="text" name="shop_name" id="shop_name" class="input-name-last"
+                                               value="{{ profile.shop_name }}">
+                                    </div>
+
+                                    <div class="form-legal-item">
+                                        <label for="name-last">حوضه فعالیت</label>
+                                        <select name="activity" id="activity">
+                                            {% for item in activity %}
+                                                <option value="{{ item.id }}">{{ item.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <div class="form-legal-item">
+                                        <label for="name-last">آدرس</label>
+                                        <input type="text" name="address" id="address" class="input-name-last"
+                                               value="{{ profile.address }}">
+                                    </div>
+
+                                    <div class="form-legal-item">
+                                        <label for="name-last">کد ملی</label>
+                                        <input type="text" name="national_code" id="national_code"
+                                               class="input-name-last"
+                                               value="{{ profile.national_code }}">
+                                    </div>
+
+                                    <div class="form-legal-item">
+                                        <label for="name-last">شهر</label>
+                                        <input type="text" name="state" id="state"
+                                               class="input-name-last"
+                                               value="{{ profile.state }}">
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-legal-row-submit">
+                        <div class="parent-btn">
+                            <button class="dk-btn dk-btn-info" type="submit">
+                                ثبت اطلاعات کاربری
+                                <i class="fa fa-check sign-in"></i>
+                            </button>
+                        </div>
+                        <a href="#" class="btn-default">انصراف</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% load static %}

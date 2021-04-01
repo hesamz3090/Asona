@@ -1,0 +1,84 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+
+{% block content %}
+    {% include "store/sidebar.html" %}
+    <div class="col-lg-9 col-md-8 col-xs-12 pull-left">
+        <div class="headline-profile page-profile-order">
+            <span>همه سفارش ها</span>
+        </div>
+        <div class="profile-stats page-profile-order">
+            <div class="table-orders">
+                <table class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">عنوان</th>
+                        <th scope="col">مبلغ کل</th>
+                        <th scope="col">تاریخ ثبت سفارش</th>
+                        <th scope="col">فرستنده</th>
+                        <th scope="col">گیرنده</th>
+                        <th scope="col">وضعیت</th>
+                        <th scope="col">پرداخت کنید</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in order %}
+                        <tr>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.created_date }}</td>
+                            <td>{{ item.sender }}</td>
+                            <td>{{ item.receiver }}</td>
+                            <td class="text-success">{{ item.status }}</td>
+                            <td class="detail"><a href="profile-order-2.html"><i class="fa fa-angle-left"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--        responsive-profile-order------------------------->
+        <div class="page-profile">
+            <div class="page-navigation">
+                <div class="page-navigation-title">سفارش‌های من</div>
+                <a href="#" class="page-navigation-btn-back">بازگشت <i class="fa fa-angle-left"></i></a>
+            </div>
+            <div class="profile-orders">
+                <div class="collapse">
+                    <div class="profile-orders-item">
+                        <div class="profile-orders-header">
+                            <a href="profile-order-2.html" class="profile-orders-header-details">
+                                <div class="profile-orders-header-summary">
+                                    <div class="profile-orders-header-row">
+                                        <span class="profile-orders-header-id">DKC-79356178</span>
+                                        <span class="profile-orders-header-state">پرداخت شده</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="ui-separator">
+                            <div class="profile-orders-header-data">
+                                <div class="profile-info-row">
+                                    <div class="profile-info-label">تاریخ ثبت سفارش</div>
+                                    <div class="profile-info-value">۷ آذر ۱۳۹۸</div>
+                                </div>
+                                <div class="profile-info-row">
+                                    <div class="profile-info-label">مبلغ قابل پرداخت</div>
+                                    <div class="profile-info-value">0</div>
+                                </div>
+                                <div class="profile-info-row">
+                                    <div class="profile-info-label">مبلغ کل</div>
+                                    <div class="profile-info-value">430,000,0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        responsive-profile-order------------------------->
+    </div>
+{% endblock %}
+
+{% load static %}

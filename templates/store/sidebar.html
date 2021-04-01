@@ -1,0 +1,20 @@
+<div class="col-lg-3 col-md-4 col-xs-12">
+    <div class="sidebar-wrapper">
+        <div class="box-sidebar">
+            <span class="box-header-sidebar">حساب کاربری شما</span>
+            <ul class="profile-menu-items">
+                <li><a href="{% url 'store' %}" class="profile-menu-url"><span
+                        class="mdi mdi-account-outline"></span>پیشخوان</a></li>
+                <li><a href="{% url 'order' %}" class="profile-menu-url"><span class="fa fa-shopping-basket"></span>سفارش
+                    ها</a></li>
+                <li><a href="{% url 'favorites' %}" class="profile-menu-url"><span class="fa fa-star-o"></span>علاقه
+                    مندی ها</a></li>
+                <li><a href="{% url 'edit' %}" class="profile-menu-url"><span class="fa mdi-account-outline"></span>اطلاعات
+                    شخصی</a></li>
+
+                <li><a href="{% url 'logout' %}" class="profile-menu-url"><span class="mdi mdi-power"></span>خروج از
+                    حساب</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}درباره ما{% endblock %}
+{% block content %}
+<br><br><br><br><br><br><br><br>
+<div class="row">
+    <div class="col-12">
+        <div class="widget widget-product card" style="margin-right: 10px">
+            <header class="card-header">
+                <span class="title-one">اعضای شرکت</span>
+                <h3 class="card-title"></h3>
+            </header>
+            <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage"
+                         style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
+
+                            <div class="owl-item" style="width: 100px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="">
+                                        <img src="{% static '/shop/images/user_logo.png'  %}" class="img-fluid"
+                                             alt="" style="width:100px !important; height:100px !important;">
+                                    </a>
+                                <p>مهندس آقاجانی</p>
+                                </div>
+                            </div>
+
+                        <div class="owl-item" style="width: 100px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="">
+                                        <img src="{% static '/shop/images/user_logo.png'  %}" class="img-fluid"
+                                             alt="" style="width:100px !important; height:100px !important;">
+                                    </a>
+                                    <p>مهندس نوروزی</p>
+                                </div>
+                            </div>
+
+                        <div class="owl-item" style="width: 100px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="">
+                                        <img src="{% static '/shop/images/user_logo.png'  %}" class="img-fluid"
+                                             alt="" style="width:100px !important; height:100px !important;">
+                                    </a>
+                                    <p>مهندس رختیانی</p>
+                                </div>
+                            </div>
+
+
+
+                        <div class="owl-item" style="width: 100px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="">
+                                    <img src="{% static '/shop/images/user_logo.png'  %}" class="img-fluid"
+                                         alt="" style="width:100px !important; height:100px !important;">
+                                </a>
+                                <p>دکتر وحدانی</p>
+                            </div>
+                        </div>
+
+                        <div class="owl-item" style="width: 100px; margin-left: 10px;">
+                                <div class="item">
+                                    <a href="">
+                                        <img src="{% static '/shop/images/user_logo.png'  %}" class="img-fluid"
+                                             alt="" style="width:100px !important; height:100px !important;">
+                                    </a>
+                                    <p>دکتر صادقی</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev disabled"><i
+                            class="fa fa-angle-right"></i></button>
+                    <button type="button" role="presentation" class="owl-next"><i class="fa fa-angle-left"></i>
+                    </button>
+                </div>
+                <div class="owl-dots disabled"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

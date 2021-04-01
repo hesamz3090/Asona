@@ -1,0 +1,28 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+{% block content %}
+
+<div class="col-12">
+    <div class="cart-page">
+        <div class="container">
+            <div class="checkout-empty">
+                <div class="checkout-empty-empty-cart-icon"></div>
+                <div class="checkout-empty-title">سبد خرید شما خالی است!</div>
+                <div class="col-lg-6 col-md-6!important col-xs-12 mx-auto">
+                    <div class="checkout-empty-links">
+
+                        <p>
+                            می‌توانید برای مشاهده محصولات بیشتر به <a href="{% url 'shop' %}">
+                               صفحه اصلی
+                            </a> بروید
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

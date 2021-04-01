@@ -1,0 +1,124 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}خانه{% endblock %}
+
+{% block content %}
+    {% include "store/sidebar.html" %}
+
+    <div class="col-lg-9 col-md-8 col-xs-12 pull-right">
+        <div class="col-lg-6 col-xs-12 pull-right">
+            <div class="headline-profile">
+                <span>اطلاعات شخصی</span>
+            </div>
+
+            <div class="profile-stats">
+                <div class="profile-stats-row">
+                        <div class="col-lg-6 col-md-6 col-xs-12 pull-right" style="padding:0;">
+                            <div class="profile-stats-col">
+                                <p><span> نام  :</span>{{ profile.first_name }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12 pull-right" style="padding:0;">
+                            <div class="profile-stats-col">
+                                <p><span>  نام خانوادگی :</span>{{ profile.last_name }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12 pull-right" style="padding:0;">
+                            <div class="profile-stats-col">
+                                <p><span>شماره تلفن :</span>{{ profile.phone }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12 pull-right" style="padding:0;">
+                            <div class="profile-stats-col">
+                                <p><span>فروشگاه :</span>{{ profile.shop_name }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12 pull-right" style="padding:0;">
+                            <div class="profile-stats-col">
+                                <p><span>آدرس :</span>{{ profile.address }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12 pull-right" style="padding:0;">
+                            <div class="profile-stats-col">
+                                <p><span>کد ملی :</span>{{ profile.national_code }}</p>
+                            </div>
+                        </div>
+                    <div class="profile-stats-action">
+                        <a href="{% url 'edit' %}" class="link-spoiler-edit"><i class="fa fa-pencil"></i>مشاهده
+                            و ویرایش</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-6 col-xs-12 pull-right">
+            <div class="headline-profile headline-profile-favorites">
+                <span>لیست علاقه مندی</span>
+            </div>
+            <div class="profile-stats">
+                {% for item in favorite %}
+                    <div class="profile-recent-fav">
+                        <a href="#"><img src="{{ item.image.url }}"></a>
+                        <div class="profile-recent-fav-col" align="left">
+                            <a href="#" style="padding: 10px;">{{ item.title_fa }}</a>
+                            <div class="profile-recent-fav-price" style="padding: 10px;">{{ item.price}} تومان</div>
+                            <div class="profile-recent-fav-remove">
+                                <a href="{% url 'edit_favorite' item.id "delete" %}">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+                <div class="profile-stats-action">
+                    <a href="{% url 'favorites' %}" class="link-spoiler-edit"><i class="fa fa-pencil"></i>مشاهده و
+                        ویرایش</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="headline-profile order-end" style="margin-top:0;">
+            <span>آخرین سفارش ها</span>
+        </div>
+        <div class="profile-stats profile-table">
+            <div class="table-orders">
+                <table class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">عنوان</th>
+                        <th scope="col">مبلغ کل</th>
+                        <th scope="col">تاریخ ثبت سفارش</th>
+                        <th scope="col">فرستنده</th>
+                        <th scope="col">گیرنده</th>
+                        <th scope="col">وضعیت</th>
+                        <th scope="col">پرداخت کنید</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in order %}
+                        <tr>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.created_date }}</td>
+                            <td>{{ item.sender }}</td>
+                            <td>{{ item.receiver }}</td>
+                            <td class="text-success">{{ item.status }}</td>
+                            <td class="detail"><a href="profile-order-2.html"><i class="fa fa-angle-left"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <a href="{% url 'order' %}" class="table-orders-show-more">مشاهده و ویرایش</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% load static %}
+
+
